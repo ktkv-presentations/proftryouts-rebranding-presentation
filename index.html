@@ -1,399 +1,724 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <title>reveal.js</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <link rel="stylesheet" href="dist/reset.css" />
-        <link rel="stylesheet" href="dist/reveal.css" />
-        <link rel="stylesheet" href="dist/theme/tokyo-night.css" />
+    <title>reveal.js</title>
 
-        <!-- Theme used for syntax highlighted code -->
-        <link rel="stylesheet" href="plugin/highlight/tokyo-night.css" />
-        <link rel="stylesheet" href="plugin/chalkboard/style.css" />
-        <link rel="stylesheet" href="plugin/customcontrols/style.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/tokyo-night.css" />
 
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <section>
-                    <h1>Beautiful presentations</h1>
-                    <h2>New features</h2>
-                    <ul>
-                        <li>Nerd icons </li>
-                        <li>
-                            <code class="js">
-                                (inline) => code("highlighting")
-                            </code>
-                        </li>
-                        <li>Automatic QR Code generation</li>
-                        <li>and much more!</li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>CUSTOM TOKYONIGHT THEME</h1>
-                    <h2 class="fragment">THAT HAS</h2>
-                    <h3 class="fragment">MULTI</h3>
-                    <h4 class="fragment">LEVEL</h4>
-                    <h5 class="fragment">HEADING</h5>
-                    <h6 class="fragment">COLORS</h6>
-                    <h6>
-                        Thanks to this project
-                        <a
-                            href="https://github.com/tcmmichaelb139/obsidian-tokyonight">
-                            
-                        </a>
-                        for the colorscheme!
-                    </h6>
-                </section>
-                <section>
-                    <section>
-                        <h1>Tailwind CSS</h1>
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                            <div>
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                            <div class="col-span-2">
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h1>Custom classes</h1>
-                        <div class="grid grid-cols-3 gap-8">
-                            <div class="border-r">
-                                <h5>border-r</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                            <div class="border-o">
-                                <h5>border-o</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                            <div class="border-y">
-                                <h5>border-y</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-                <section>
-                    <section data-auto-animate>
-                        <h1>New code highlighting!</h1>
-                        <div>
-                            Now also has Tokyo Night
-                            <code>highlight.js</code>
-                            highlighting implementation
-                        </div>
-                        <pre><code data-trim data-noescape>
-var foo = {
-    bar: function () {
-             alert("Hello, World!");
-         }
-};	
-					</code></pre>
-                    </section>
-                    <section data-auto-animate>
-                        <h1>New code highlighting!</h1>
-                        <h5>Inline code highlighting is now also supported!</h5>
-                        <p>
-                            Just wrap your code with
-                            <code>&lt;code&gt;</code>
-                            tag and get highlighting like this
-                            <code class="js">
-                                const foo = () => {return bar}
-                            </code>
-                            !
-                        </p>
-                    </section>
-                </section>
-                <section>
-                    <h1>Mermaid for beautiful diagrams!</h1>
-                    <div class="mermaid">
-                        <pre>
-						erDiagram
-    CUSTOMER ||--o{ ORDER : ""
-    CUSTOMER {
-        string name
-        string custNumber
-        string sector
-    }
-    ORDER ||--|{ LINE-ITEM : contains
-    ORDER {
-        int orderNumber
-        string deliveryAddress
-    }
-    LINE-ITEM {
-        string productCode
-        int quantity
-        float pricePerUnit
-    }
-    ORDER ||--|{ STUDENT : contains
-    STUDENT {
-        int orderNumber
-        string deliveryAddress
-    }
-						</pre
-                        >
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/tokyo-night.css" />
+    <link rel="stylesheet" href="plugin/chalkboard/style.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fragment.blur {
+            filter: blur(8px);
+        }
+
+        .fragment.blur.visible {
+            filter: none;
+        }
+
+        code {
+            font-size: 0.8rem !important;
+        }
+
+        .loader {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4a90e2;
+            border-radius: 4px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader.active {
+            display: flex;
+        }
+
+        .dots {
+            color: white;
+            font-size: 16px;
+            letter-spacing: 3px;
+            height: 20px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .form-container {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border 0.3s;
+            box-sizing: border-box;
+        }
+
+        .form-container input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        .form-container button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+
+        .form-container button:hover {
+            background-color: #3a7bca;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <div class="r-stretch grid grid-rows-3">
+                    <div class="flex justify-between items-center">
+                        <img src="assets/logo-new.jpg" class="rounded-full" style="height: 10rem" alt="">
+                        <h5>Колледж инновационных технологий,<br />экономики и коммерции</h5>
+                        <img src="assets/logo-new.jpg" class="rounded-full" style="height: 10rem; visibility: hidden;"
+                            alt="">
                     </div>
-                    <h4>
-                        Check documentation
-                        <a href="https://mermaid.js.org/config/usage.html">
-                            here
-                        </a>
-                        !
-                    </h4>
-                </section>
-                <section>
-                    <h1>Now supports Nerd font icons!</h1>
-                    <div>Nerdy project that adds icons to font itself</div>
-                    <h6>
-                        Checkout their site for icons like this
-                        <a href="https://www.nerdfonts.com/">󰖟</a>
-                        !
-                    </h6>
-                </section>
-                <section>
-                    <h1>Now supports automatic QRCode generation!</h1>
-                    <div>
-                        With GoQR you can just add data-type and alt attributes
-                        to your
-                        <code class="html">
-                            &lt;img src="https://goqr.me/" data-type="qrcode" /
-                            &gt;
-                        </code>
-                        tag!
+                    <h1 class="self-center justify-self-center">Ребрендинг сайта</h1>
+                    <h4 class="justify-self-end self-center">Кутиков Павел Алексеевич</h4>
+                </div>
+            </section>
+            <section>
+                <section data-auto-animate>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="/assets/webdesign.png" alt="" class="rounded-md">
+                        <div class="border-r self-center">
+                            <h1 data-id="webdev">Веб-разработка</h1>
+                            <p>процесс создания сайтов и веб-приложений, которыми мы пользуемся каждый день</p>
+                            <ul>
+                                <li>
+                                    одностраничные сайты
+                                </li>
+                                <li>
+                                    социальных сетей
+                                </li>
+                                <li>
+                                    интернет-магазинов
+                                </li>
+                                <li>
+                                    образовательных платформ
+                                </li>
+                                <li>
+                                    онлайн-игр
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <img
-                        class="r-stretch"
-                        src="https://goqr.me/"
-                        data-type="qrcode" />
+                </section>
+                <section data-auto-animate>
+                    <h1 data-id="webdev">Веб-разработка</h1>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="border-b fragment custom blur" data-fragment-index="2">
+                            <h3>CSS</h3>
+                            <p>язык стилей</p>
+                            <h5><em>КАК</em> выглядит страница</h5>
+                        </div>
+                        <div class="border-b fragment custom blur" data-fragment-index="1">
+                            <h3>HTML</h3>
+                            <p>язык разметки</p>
+                            <h5><em>ЧТО</em> находится на странице</h5>
+                        </div>
+                        <div class="border-b fragment custom blur" data-fragment-index="3">
+                            <h3>JS</h3>
+                            <p>язык программирования</p>
+                            <h5><em>ЧТО ПРОИСХОДИТ</em> на странице</h5>
+                        </div>
+                    </div>
                 </section>
                 <section>
-                    <h1>New changes on the way!</h1>
+                    <div class="grid grid-cols-2 gap-4">
+                        <pre><code data-trim class="html">
+&lt;h2 class="form-title"&gt;Регистрация&lt;/h2&gt;
+&lt;form&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="name"&gt;Имя&lt;/label&gt;
+        &lt;input type="text" id="name" placeholder="Введите ваше имя"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="email" placeholder="Введите ваш email"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="password"&gt;Пароль&lt;/label&gt;
+        &lt;input type="password" id="password" placeholder="Введите пароль"&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;
+                        </code></pre>
+                        <div class="border-b">
+                            <h2 class="form-title">Регистрация</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Имя</label>
+                                    <input type="text" id="name" placeholder="Введите ваше имя">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Введите ваш email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Пароль</label>
+                                    <input type="password" id="password" placeholder="Введите пароль">
+                                </div>
+
+                                <button type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
                 </section>
-            </div>
+                <section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <pre><code data-trim data-line-numbers="1-59" class="html">
+&lt;style&gt;
+.form-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border 0.3s;
+    box-sizing: border-box;
+}
+
+.form-container input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.form-container button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #3a7bca;
+}
+&lt;/style&gt;
+&lt;h2 class="form-title"&gt;Регистрация&lt;/h2&gt;
+&lt;form&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="name"&gt;Имя&lt;/label&gt;
+        &lt;input type="text" id="name" placeholder="Введите ваше имя"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="email" placeholder="Введите ваш email"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="password"&gt;Пароль&lt;/label&gt;
+        &lt;input type="password" id="password" placeholder="Введите пароль"&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;
+                        </code></pre>
+                        <div class="border-b form-container">
+                            <h2 class="form-title">Регистрация</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Имя</label>
+                                    <input type="text" id="name" placeholder="Введите ваше имя">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Введите ваш email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Пароль</label>
+                                    <input type="password" id="password" placeholder="Введите пароль">
+                                </div>
+
+                                <button type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <pre><code data-trim data-line-numbers="82-117" class="html">
+&lt;style&gt;
+.form-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border 0.3s;
+    box-sizing: border-box;
+}
+
+.form-container input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.form-container button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #3a7bca;
+}
+&lt;/style&gt;
+&lt;h2 class="form-title"&gt;Регистрация&lt;/h2&gt;
+&lt;form&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="name"&gt;Имя&lt;/label&gt;
+        &lt;input type="text" id="name" placeholder="Введите ваше имя"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="email" placeholder="Введите ваш email"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="password"&gt;Пароль&lt;/label&gt;
+        &lt;input type="password" id="password" placeholder="Введите пароль"&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('myForm-fin');
+    const submitBtn = document.getElementById('submitBtn-fin');
+    const loader = document.getElementById('loader-fin');
+    const dots = document.getElementById('dots-fin');
+
+    let dotsCount = 0;
+    let loaderInterval;
+
+    function updateDots() {
+        dotsCount = (dotsCount % 3) + 1;
+        dots.textContent = ".".repeat(dotsCount);
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Show loader
+        loader.classList.add('active');
+
+        // Start dot animation
+        updateDots();
+        loaderInterval = setInterval(updateDots, 500);
+
+        // Simulate form processing (5 seconds)
+        setTimeout(function () {
+            // Hide loader
+            loader.classList.remove('active');
+            clearInterval(loaderInterval);
+
+            // Reset form or redirect as needed
+            form.reset();
+            alert('Форма успешно отправлена!');
+        }, 3000);
+        });
+    });
+&lt;/script&gt;
+                        </code></pre>
+                        <div class="border-b form-container">
+                            <h2 class="form-title">Регистрация</h2>
+                            <form id="myForm-fin">
+                                <div class="form-group">
+                                    <label for="name">Имя</label>
+                                    <input type="text" id="name" placeholder="Введите ваше имя">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Введите ваш email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Пароль</label>
+                                    <input type="password" id="password" placeholder="Введите пароль">
+                                </div>
+
+                                <button type="submit" id="submitBtn-fin">Отправить <div class="loader" id="loader-fin">
+                                        <div class="dots" id="dots-fin"></div>
+                                    </div></button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <div class="r-stretch grid grid-rows-3">
+                    <div class="flex justify-between items-center">
+                        <img src="assets/logo-new.jpg" class="rounded-full" style="height: 10rem" alt="">
+                        <h5>Колледж инновационных технологий,<br />экономики и коммерции</h5>
+                        <img src="assets/logo-new.jpg" class="rounded-full" style="height: 10rem; visibility: hidden;"
+                            alt="">
+                    </div>
+                    <h1 class="self-center justify-self-center">Ребрендинг сайта</h1>
+                    <div class="justify-self-end self-center flex flex-col items-end">
+                        <h4>Кутиков Павел Алексеевич</h4>
+                        <em>Преподаватель информационных дисциплин</em>
+                    </div>
+                </div>
+            </section>
         </div>
+    </div>
 
-        <script src="dist/reveal.js"></script>
-        <script src="plugin/notes/notes.js"></script>
-        <script src="plugin/markdown/markdown.js"></script>
-        <script src="plugin/highlight/highlight.js"></script>
-        <script src="plugin/qrcode/qrcode.js"></script>
-        <script src="plugin/mermaid/mermaid.js"></script>
-        <script src="plugin/chalkboard/plugin.js"></script>
-        <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/qrcode/qrcode.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
 
-        <script>
-            tailwind.config = {
-                corePlugins: {
-                    preflight: false,
-                },
-            }
-        </script>
-        <script>
-            // More info about initialization & config:
-            // - https://revealjs.com/initialization/
-            // - https://revealjs.com/config/
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+        }
+    </script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
 
-            const colors = {
-                blue0: 'rgb(61, 89, 161)',
-                blue: 'rgb(122, 162, 247)',
-                cyan: 'rgb(125, 207, 255)',
-                magenta: 'rgb(187, 154, 247)',
-                orange: 'rgb(255, 158, 100)',
-                yellow: 'rgb(224, 175, 104)',
-                green: 'rgb(158, 206, 106)',
-                teal: 'rgb(26, 188, 156)',
-                red: 'rgb(255, 117, 127)',
-                red1: 'rgb(219, 75, 75)',
-                fg: 'rgb(192, 202, 245)',
-                bg: 'rgb(26, 27, 38)',
-                transparent: '#00000000',
-            }
+        const colors = {
+            blue0: 'rgb(61, 89, 161)',
+            blue: 'rgb(122, 162, 247)',
+            cyan: 'rgb(125, 207, 255)',
+            magenta: 'rgb(187, 154, 247)',
+            orange: 'rgb(255, 158, 100)',
+            yellow: 'rgb(224, 175, 104)',
+            green: 'rgb(158, 206, 106)',
+            teal: 'rgb(26, 188, 156)',
+            red: 'rgb(255, 117, 127)',
+            red1: 'rgb(219, 75, 75)',
+            fg: 'rgb(192, 202, 245)',
+            bg: 'rgb(26, 27, 38)',
+            transparent: '#00000000',
+        }
 
-            Reveal.initialize({
-                hash: true,
-                // Learn about plugins: https://revealjs.com/plugins/
-                plugins: [
-                    RevealMarkdown,
-                    RevealHighlight,
-                    RevealNotes,
-                    RevealMermaid,
-                    RevealChalkboard,
-                    RevealCustomControls,
-                ],
-                slideNumber: true,
-                customcontrols: {
-                    controls: [
-                        {
-                            icon: '<div></div>',
-                            title: 'Clear canvas (DEL)',
-                            action: 'RevealChalkboard.clear();',
-                        },
-                        {
-                            icon: '<div></div>',
-                            title: 'Toggle chalkboard (B)',
-                            action: 'RevealChalkboard.toggleChalkboard();',
-                        },
-                        {
-                            icon: '<div></div>',
-                            title: 'Toggle notes canvas (C)',
-                            action: 'RevealChalkboard.toggleNotesCanvas();',
-                        },
-                    ],
-                },
-                chalkboard: {
-                    boardmarkerWidth: 5,
-                    boardmarkers: [
-                        {
-                            color: colors.bg,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.fg,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.blue,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.red,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.green,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.yellow,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.teal,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.orange,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                    ],
-                    chalks: [
-                        {
-                            color: colors.bg,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.fg,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.blue,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.red,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.green,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.yellow,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.teal,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.orange,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                    ],
-                },
-                mermaid: {
-                    securityLevel: 'loose',
-                    theme: 'dark',
-                    themeVariables: {
-                        darkMode: true,
-                        textColor: colors.fg,
-                        background: colors.bg,
-                        mainBkg: colors.bg,
-                        lineColor: colors.fg,
+        Reveal.initialize({
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealNotes,
+                RevealMermaid,
+                RevealChalkboard,
+                RevealCustomControls,
+            ],
+transitionSpeed: 'slow',
+            slideNumber: true,
+            hideInactiveCursor: true,
+            customcontrols: {
+                controls: [
+                    {
+                        icon: '<div></div>',
+                        title: 'Clear canvas (DEL)',
+                        action: 'RevealChalkboard.clear();',
                     },
+                    {
+                        icon: '<div></div>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();',
+                    },
+                    {
+                        icon: '<div></div>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();',
+                    },
+                ],
+            },
+            chalkboard: {
+                boardmarkerWidth: 5,
+                boardmarkers: [
+                    {
+                        color: colors.bg,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.fg,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.blue,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.red,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.green,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.yellow,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.teal,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.orange,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                ],
+                chalks: [
+                    {
+                        color: colors.bg,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.fg,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.blue,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.red,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.green,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.yellow,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.teal,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.orange,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                ],
+            },
+            mermaid: {
+                securityLevel: 'loose',
+                theme: 'dark',
+                themeVariables: {
+                    darkMode: true,
+                    textColor: colors.fg,
+                    background: colors.bg,
+                    mainBkg: colors.bg,
+                    lineColor: colors.fg,
                 },
-            })
-        </script>
-    </body>
-</html>
+            },
+        })
 
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('myForm-fin');
+            const submitBtn = document.getElementById('submitBtn-fin');
+            const loader = document.getElementById('loader-fin');
+            const dots = document.getElementById('dots-fin');
+
+            let dotsCount = 0;
+            let loaderInterval;
+
+            function updateDots() {
+                dotsCount = (dotsCount % 3) + 1;
+                dots.textContent = ".".repeat(dotsCount);
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent form submission
+
+                // Show loader
+                loader.classList.add('active');
+
+                // Start dot animation
+                updateDots();
+                loaderInterval = setInterval(updateDots, 500);
+
+                // Simulate form processing (5 seconds)
+                setTimeout(function () {
+                    // Hide loader
+                    loader.classList.remove('active');
+                    clearInterval(loaderInterval);
+
+                    // Reset form or redirect as needed
+                    form.reset();
+                    alert('Форма успешно отправлена!');
+                }, 3000);
+            });
+        });
+    </script>
+
+</html>
